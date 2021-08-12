@@ -1,4 +1,4 @@
---테이블 생성.
+--create member2.
 create table member2(
 	id varchar2(12),
 	passwd varchar2(12),

@@ -31,9 +31,9 @@ public class ProcedureTest {
 			System.out.println("insert success!");
 			
 		} catch (ClassNotFoundException e) {
-			
+			System.out.println("Driver ì˜¤ë¥˜ ë°œìƒ.");
 		} catch (SQLException e) {
-			
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ.");
 		}
 		
 	}
@@ -41,7 +41,6 @@ public class ProcedureTest {
 	public void select() {
 		
 		String sql = "select * from member2";
-		
 		try {
 			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url,"java","java");
@@ -50,12 +49,12 @@ public class ProcedureTest {
 			
 			while(rs.next()) {
 				System.out.println(
-						"¾ÆÀÌµğ : "+rs.getString(1)+
-						", ºñ¹Ğ¹øÈ£ : "+rs.getString(2)+
-						", ÀÌ¸§ : "+rs.getString(3)+
-						", ³ªÀÌ : "+rs.getInt(4)+
-						", ÁÖ¼Ò : "+rs.getString(5)+
-						", ÀÌ¸ŞÀÏ : "+rs.getString(6)
+						"ì•„ì´ë”” : "+rs.getString(1)+
+						", ë¹„ë°€ë²ˆí˜¸ : "+rs.getString(2)+
+						", ì´ë¦„ : "+rs.getString(3)+
+						", ë‚˜ì´ : "+rs.getInt(4)+
+						", ì£¼ì†Œ : "+rs.getString(5)+
+						", ì´ë©”ì¼ : "+rs.getString(6)
 						);
 			}
 			System.out.println("1111");
@@ -64,10 +63,9 @@ public class ProcedureTest {
 			con.close();
 			
 		} catch (ClassNotFoundException e) {
-			
+			System.out.println("Driver ì˜¤ë¥˜ ë°œìƒ.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ.");
 		}
 		
 	}
@@ -82,34 +80,29 @@ public class ProcedureTest {
 			
 			cs.setString(1, "procedure");
 			cs.setString(2, "1234");
-			cs.setString(3, "È«±æµ¿");
+			cs.setString(3, "í™ê¸¸ë™");
 			cs.setInt(4, 19);
-			cs.setString(5, "°­¿øµµ");
+			cs.setString(5, "ê°•ì›ë„");
 			cs.setString(6, "hong@abc.com");
 			
 			cs.execute();
 			
 		} catch (ClassNotFoundException e) {
-			
+			System.out.println("Driver ì˜¤ë¥˜ ë°œìƒ.");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("ì˜¤ë¥˜ ë°œìƒ.");
 		}
 		
-		
 	}
-	
-	
 	
 	public static void main(String[] args) {
 		
 		ProcedureTest p = new ProcedureTest();
-		System.out.println("-------- ÇÁ·Î½ÃÀú È£Ãâ ÈÄ µ¥ÀÌÅÍ --------");
+		System.out.println("-------- í”„ë¡œì‹œì € í˜¸ì¶œ ì „ ë°ì´í„° --------");
 		p.insert();
 		p.select();
-		System.out.println("-------- ÇÁ·Î½ÃÀú È£Ãâ ÈÄ µ¥ÀÌÅÍ --------");
+		System.out.println("-------- í”„ë¡œì‹œì € í˜¸ì¶œ í›„ ë°ì´í„° --------");
 		p.insertMember();
 		p.select();
 	}
-
 }
