@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h3{
+		padding-left : 10px;
+		color: #C71585; 
+		
+	}
+	li{
+		list-style-type: none;
+	}
+	section #data{
+		float :left; 
+		width : 8%;
+		height : 120px;
+	}
+	section #input{
+		float : left;
+		width : 92%;
+		height : 120px;
+	}
+
+	#result_submit{
+		display : block;
+		padding-left : 150px;
+	}
+</style>
+</head>
+<body>
+	
+	<h1 style="padding-left: 150px;">상품 주문서</h1>
+	<h3>개인정보</h3>
+	<form>
+		<section>
+			<label id="data">
+				<ul>
+					<li>이름</li>
+					<li>연락처</li>
+				</ul>
+			</label>
+			<label id="input">
+				<ul>
+					<li><input type="text" name="name" placeholder="여백없이 입력"></li>
+					<li><input type="text" name="phone_number" placeholder="연락가능한 번호"></li>
+				</ul>
+			</label>
+		</section>
+		
+		
+		<h3>배송지 정보</h3>
+		<section>
+			<label id="data">
+				<ul>
+					<li>주소</li>
+					<li>전화번호</li>
+					<li>메모</li>
+				</ul>
+			</label>
+			<label id="input">
+				<ul>
+					<li><input type="text" name="address"></li>
+					<li><input type="text" name="call_number"></li>
+					<li><textarea name="content"></textarea></li>
+				</ul>
+			</label>
+		</section>
+		
+		<h3>주문정보</h3>
+		<section>
+		<ul>
+			<li>
+				<input type="checkbox" name="check1">
+				<label>과테말라 안티구아 (100g)</label>
+				<input type="text" name="product_1" value="0">
+				개
+			</li>
+			<li>
+				<input type="checkbox" name="check2">
+				<label>인도네시아 만델링 (100g)</label>
+				<input type="text" name="product_2" value="0">
+				개
+			</li>
+			<li>
+				<input type="checkbox" name="check3">
+				<label>탐라는도다(블렌딩) (100g)</label>
+				<input type="text" name="product_3" value="0">
+				개
+			</li>
+		</ul>
+		</section>
+		
+		<p id="result_submit">
+			<input type="submit" name="result" value="주문하기">
+			<input type="submit" name="reset" value="다시 작성">
+		</p>
+	</form>
+</body>
+</html>
