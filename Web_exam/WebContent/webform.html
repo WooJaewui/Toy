@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Web form</title>
+	<style type="text/css">
+	
+		legend {
+			color : blue;
+			font-weight: bold;
+		}
+	
+		li {
+			list-style-type: none;
+		}
+		
+		a {
+			font-weight: bold;
+			width : 10.5%;
+			text-align: right;
+			float : left;
+		}
+		
+		label {
+			display : block;
+			width : 85%;
+			float : right;
+		}
+		
+		
+		
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center;">여름방학 특강 신청</h1>
+	<form >
+		<fieldset>
+			<legend>수강 신청인</legend>
+			<ul>
+				<li>
+					학번
+					<input type="text" name="s_number" required="required">
+					이름
+					<input type="text" name="name" required="required">
+				</li>
+				<li>
+					학과
+					<input list="option" name="major" required="required">
+					<datalist id="option">
+						<option value="건축공학과">
+						<option value="기계공학과">
+						<option value="산업공학과">
+						<option value="전기전자공학과">
+						<option value="컴퓨터공학과">
+						<option value="화학공학과">
+						<option value="사학과">
+						<option value="철학">
+					</datalist>
+					
+				</li>
+			</ul>
+		</fieldset>
+		
+		<fieldset>
+			<legend>수강 과목을 선택하세요</legend>
+			<ul>
+				<li>
+					<a>선호색상</a>
+					<label>
+						<input type="color" name="color" required="required">
+					</label>
+				</li>
+				<li>
+					<a>신청 과목(회화)</a>
+					<label>
+						<input type="radio" name="english" required="required">영어 회화(초급) 
+						<input type="radio" name="english" required="required">영어 회화(중급) 
+						<input type="radio" name="english" required="required">영어 회화(고급) 
+					</label>
+				</li>
+				<li>
+					<a>신청 과목(자격)</a>
+					<label>
+						<input type="radio" name="english_exam" required="required">TOEIC 
+						<input type="radio" name="english_exam" required="required">TOEFl 
+						<input type="radio" name="english_exam" required="required">OPIC 
+					</label>
+				</li>
+				<li>
+					<a>관심분야</a>
+					<label>
+						<input list="hobby" name="hobby">
+						<datalist id="hobby">
+							<option value="문법">
+							<option value="어휘">
+							<option value="뉴스">
+							<option value="리스닝">
+							<option value="뉴스청취">
+						</datalist>
+					</label>
+				</li>
+			</ul>
+		</fieldset>
+		
+		<fieldset>
+			<legend>강의 시간을 선택하세요</legend>
+			<ul>
+				<li>
+					<a>개강 주</a>
+					<label>
+						<input type="week" name="date" required="required">
+					</label>
+				</li>
+				<li>
+					<a>강의 시간</a>
+					<label>
+						<input type="time" name="time" required="required">
+					</label>	
+				</li>
+				
+			</ul>
+		</fieldset>
+		
+		<fieldset>
+			<legend>학생증 사본 업로드</legend>
+			<ul>
+				<li>
+					학생증 사본
+					<input type="file" name="file" multiple="multiple">
+				</li>		
+			</ul>
+		</fieldset>
+		<div style="text-align: center; margin-top: 20px ">
+			<input type="submit" value="신청완료">
+			<input type="reset" value="다시작성">
+		</div>
+	</form>
+</body>
+</html>
