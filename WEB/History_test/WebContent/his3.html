@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="./his1.html">1페이지 이동.</a><br>
+	<a href="./his2.html">2페이지 이동.</a><br>
+	<button onclick="go_Back1()">이전 페이지 이동.</button>
+	<button onclick="go_Back2()">두단계 이전 페이지 이동.</button>
+	<script type="text/javascript">
+		function go_Back1(){
+			window.history.back();
+		}
+		
+		function go_Back2(){
+			window.history.go(-2);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="./his2.html">2페이지 이동.</a><br>
+	<a href="./his3.html">3페이지 이동.</a><br>
+	<button id="go" onclick="go_Back()">이전 페이지 이동.</button>
+	<button id="forward" onclick="go_Forward()">앞 페이지 이동.</button>
+	<script type="text/javascript">
+		function go_Back() {
+			history.back();
+		}
+		
+		function go_Forward() {
+			history.forward();
+		}
+	</script>
+</body>
+</html>
