@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom Test1</title>
+</head>
+<body>
+	<h1 id="title">마우스 아웃</h1>
+	<img src="./img/btn_out.gif" id="img" onmouseover="mouse_over()" onmouseout="mouse_out()"><br><br>
+	<a href="" id="url" onclick="getURL"></a> 
+	<script type="text/javascript">
+		var theBtn = document.getElementById("btn");
+		var s = document.getElementById("url");
+		var img = document.getElementById("img");
+		
+		function mouse_over() {
+			img.src="./img/btn_over.gif"
+			s.innerHTML = img.src
+			s.href = img.src.getAttribute(src);
+		}
+			
+		function mouse_out() {
+			img.src = "./img/btn_out.gif"
+			s.innerHTML = img.src
+			s.href = img.src.getAttribute(src);
+		}
+		
+	</script>
+</body>
+</html>
