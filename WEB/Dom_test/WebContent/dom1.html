@@ -6,23 +6,31 @@
 </head>
 <body>
 	<h1 id="title">마우스 아웃</h1>
-	<img src="./img/btn_out.gif" id="img" onmouseover="mouse_over()" onmouseout="mouse_out()"><br><br>
-	<a href="" id="url" onclick="getURL"></a> 
+	<a href="" id="url" onclick="getURL">
+		<img src="./img/btn_out.gif" id="img" onmouseover="mouse_over()" onmouseout="mouse_out()"><br><br>
+	</a> 
+	<a href="" id="url_text"></a>
 	<script type="text/javascript">
+	
 		var theBtn = document.getElementById("btn");
 		var s = document.getElementById("url");
+		var s_text = document.getElementById("url_text");
 		var img = document.getElementById("img");
 		
 		function mouse_over() {
 			img.src="./img/btn_over.gif"
-			s.innerHTML = img.src
-			s.href = img.src.getAttribute(src);
+			s.href = img.getAttribute("src");
+			s_text.innerHTML = img.src
+			s_text.href = img.getAttribute("src");
+			document.getElementById("title").innerHTML = "마우스 오버";
 		}
-			
+		
 		function mouse_out() {
 			img.src = "./img/btn_out.gif"
-			s.innerHTML = img.src
-			s.href = img.src.getAttribute(src);
+			s.href = img.getAttribute("src");
+			s_text.innerHTML = img.src
+			s_text.href = img.getAttribute("src");
+			document.getElementById("title").innerHTML = "마우스 아웃";
 		}
 		
 	</script>

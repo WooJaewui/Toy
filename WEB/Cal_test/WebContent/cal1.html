@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+	<script type="text/javascript">
+		var oldNumber;
+		var newNumber;
+		var cal;
+		var result;
+		function select_num(num){
+			if(document.getElementById("window").innerHTML == 0){
+				document.getElementById("window").innerHTML = num.innerHTML;
+			} else if(isNaN(Number(document.getElementById("window").innerHTML))){
+				document.getElementById("window").innerHTML = 0
+				document.getElementById("window").innerHTML = num.innerHTML;
+			} else {
+				document.getElementById("window").innerHTML += num.innerHTML;
+			}
+			newNumber = document.getElementById("window").innerHTML
+		}
+		
+		function calc(calc){
+			cal = calc.innerHTML;
+			oldNumber = newNumber;
+			document.getElementById("window").innerHTML += calc.innerHTML;
+		}
+		
+		function all_clear(){
+			document.getElementById("window").innerHTML = 0;
+			oldNumber = 0;
+			newNumber = 0;
+			cal = "";
+			result = 0;
+		}
+		
+		function cal_result(){
+			switch(cal){
+			case "+":
+				result = Number(oldNumber) + Number(newNumber);
+				document.getElementById("window").innerHTML = result;
+				newNumber = result;
+				break;
+			case "-":
+				result = Number(oldNumber) - Number(newNumber);
+				document.getElementById("window").innerHTML = result;
+				newNumber = result;
+				break;
+			case "*":
+				result = Number(oldNumber) * Number(newNumber);
+				document.getElementById("window").innerHTML = result;
+				newNumber = result;
+				break;
+			case "/":
+				result = Number(oldNumber) / Number(newNumber);
+				document.getElementById("window").innerHTML = result;
+				newNumber = result;
+				break;
+			case "%":
+				result = Number(oldNumber) % Number(newNumber);
+				document.getElementById("window").innerHTML = result;
+				newNumber = result;
+				break;
+			default:
+				clear();
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="window">0</div>
+	<table>
+		<tr>
+			<td>
+				<button id="7" onclick="select_num(this)">7</button>
+				<button id="8" onclick="select_num(this)">8</button>
+				<button id="9" onclick="select_num(this)">9</button>
+				<button id="plus" onclick="calc(this)">+</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="4" onclick="select_num(this)">4</button>
+				<button id="5" onclick="select_num(this)">5</button>
+				<button id="6" onclick="select_num(this)">6</button>
+				<button id="minus" onclick="calc(this)">-</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="1" onclick="select_num(this)">1</button>
+				<button id="2" onclick="select_num(this)">2</button>
+				<button id="3" onclick="select_num(this)">3</button>
+				<button id="multiply" onclick="calc(this)">*</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="0" onclick="select_num(this)">0</button>
+				<button id="remainder" onclick="calc(this)">%</button>
+				<button id="division" onclick="calc(this)">/</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="clear" onclick="all_clear()">clear</button>
+				<button id="result" onclick="cal_result()">=</button>
+			</td>
+		</tr>
+	</table>
+	
+
+</body>
+</html>

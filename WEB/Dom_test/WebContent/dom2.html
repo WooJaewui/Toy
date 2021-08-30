@@ -4,11 +4,31 @@
 <meta charset="UTF-8">
 <title>Dom Test2</title>
 <script type="text/javascript">
-	var chk_all = document.getElementById("all");
-	var chk = document.getElementsByClassName("check");
 	
-	function select_all(){
-		if(all.checked == true){
+	
+	var pw = document.getElementsByName("pw");
+	var chk = document.getElementsByClassName("check");
+	var option = document.getElementsByName("agree");
+	
+	function check_pass(){
+		if(pw[0].value == pw[1].value){
+			alert("비밀번호 검사완료.")
+		} else {
+			alert("비밀번호 오류.")
+		}
+	}
+
+	function check_option(){
+		if(option[0].checked == false){
+			alert("약관에 동의해야합니다.");
+			return false;
+		} else {
+			document.f2.submit();
+		}
+	} 
+	
+	function select_all(all){
+		if(all.checked){
 			for(var i=0; i<chk.length; i++){
 				chk[i].checked = true;
 			}
@@ -18,24 +38,26 @@
 			}
 		}
 	}
+	
 </script>
 </head>
 <body>
-	<form action="#" name="f1">
+	<form action="#" name="f1" method="post">
 		<fieldset>
 			<legend>폼 요소1</legend>
 			<p>
 				 비밀번호
-				<input type="text">
+				<input type="password" name="pw">
 			</p>
 			<p>
 				비밀번호 확인
-				<input type="text">
-				<input type="submit" value="확인">
+				<input type="password" name="pw">
+				<input type="button" value="확인" onclick="check_pass()">
 			</p>
 		</fieldset>
 	</form>
-	<form action="#" name="f2">
+	
+	<form action="#" name="f2" method="post">
 		<fieldset>
 			<legend>폼 요소2</legend>
 			<div id="terms">
@@ -47,17 +69,16 @@
 				<input type="checkbox" name="agree">약관 동의합니다.
 			</div><br>
 			<div>
-				<input type="checkbox" id="all" onclick="select_all()">전체 [선택/해제]<br>
+				<input type="checkbox" onclick="select_all(this)">전체 [선택/해제]<br>
 				<input type="checkbox" class=check name="s1">과목1<br>
 				<input type="checkbox" class=check name="s2">과목2<br>
 				<input type="checkbox" class=check name="s3">과목3<br>
 			</div>
 			<div>
-				<input type="submit" value="등록 완료" onclick="check_option()">
+				<input type="button" value="등록 완료" onclick="check_option()">
 				<input type="reset" value="등록 취소">
 			</div>
 		</fieldset>
-		
 	</form>
 </body>
 </html>
