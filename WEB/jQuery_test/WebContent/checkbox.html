@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<form>
+		 음악감상 <input type="checkbox" id="music" name="음악감상"><br>
+		 요가 <input type="checkbox" id="yoga" name="요가"><br>
+		 독서 <input type="checkbox" id="read" name="독서"><br>
+		<input type="submit" value="취미 선택">
+ 	</form>
+	 <p>결과</p>
+	 <script type="text/javascript">
+	 	$('document').ready(function(){
+	 		$('input[type="submit"]').click(function(){
+	 			
+	 			var result = "";
+	 			$('input[type="checkbox"]:checked').each(function(){
+	 				result += ($(this).attr('name')+'\t');
+	 			})
+	 			
+	 			$('p').text(result);
+	 			console.log(result);
+	 			event.preventDefault();
+	 			
+	 		})
+	 	})
+	 </script>
+</body>
+</html>
