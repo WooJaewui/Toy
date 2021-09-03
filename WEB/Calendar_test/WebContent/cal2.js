@@ -8,12 +8,12 @@
 		pageYear = year;
 		pageMonth = month+1;
 	}
-	var firstDay = new Date(pageYear, pageMonth-1, 1).getDay();
-	var lastDate = new Date(pageYear, pageMonth, 0).getDate();
-	var firstDate = 1;
-	var index = 0;
 	
-	function setDate(pageYear, pageMonth, firstDay, lastDate, firstDate, index){
+	function setDate(pageYear, pageMonth){
+		var firstDay = new Date(pageYear, pageMonth-1, 1).getDay();
+		var lastDate = new Date(pageYear, pageMonth, 0).getDate();
+		var firstDate = 1;
+		var index = 0;
 		$(".day").each(function(){
 			
 			if(index < firstDay){
@@ -27,13 +27,15 @@
 				firstDate++;
 			}
 			if(firstDate > lastDate+1){
+				
 				$(this).text(" ");
 			} 
 			index ++;
 		})
 	}
 	$('document').ready(function(){
-		setDate(pageYear, pageMonth, firstDay, lastDate, firstDate, index);
+		
+		setDate(pageYear, pageMonth);
 	
 		$('#month').html(pageMonth+"월");
 		$('#year').html(pageYear+"년 ");
@@ -45,12 +47,9 @@
 			}
 			$('#month').html(pageMonth+"월");
 			$('#year').html(pageYear+"년 ");
+
+			setDate(pageYear, pageMonth);
 			
-			firstDay = new Date(pageYear, pageMonth-1, 1).getDay();
-			lastDate = new Date(pageYear, pageMonth, 0).getDate();
-			firstDate = 1;
-			index = 0;
-			setDate(pageYear, pageMonth, firstDay, lastDate, firstDate, index)
 			event.preventDefault();
 		})
 		$('input[value="다음 달▶"]').click(function(){
@@ -62,11 +61,8 @@
 			$('#month').html(pageMonth+"월");
 			$('#year').html(pageYear+"년 ");
 			
-			firstDay = new Date(pageYear, pageMonth-1, 1).getDay();
-			lastDate = new Date(pageYear, pageMonth, 0).getDate();
-			firstDate = 1;
-			index = 0;
-			setDate(pageYear, pageMonth, firstDay, lastDate, firstDate, index)
+			setDate(pageYear, pageMonth);
+			
 			event.preventDefault();
 		})
 		
