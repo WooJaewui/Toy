@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style="width:1200px; margin:0 auto;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col"></div><!-- 빈공간 -->
+                    <div class="col-10">
+                        <div class="row p-2 mt-2 bg-dark bg-opacity-10"><!-- Header -->
+                            <div class="col-sm-1 col-form-label">Navbar</div>
+                            <div class="col-sm-1 col-form-label">Home</div>
+                            <div class="col-sm-1 col-form-label">Link</div>
+                            <div class="col-sm-2 col-form-label">
+                                Dropdown
+                            </div>
+                            <div class="col-sm-1 col-form-label"></div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Search" >
+                            </div>
+                            <div class="col-2">
+                                <input type="button" class="btn btn-secondary form-control" value="Search">
+                            </div>
+                        </div>
+                        <div class="row mt-5"><!-- 게시판 -->
+                            <div class="col text-center fs-1">게시판</div>
+                        </div>
+                        <div class="row mt-4"><!-- 게시판 검색 -->
+                            <div class="col-2">
+                                <select class="form-select form-control">
+                                    <option value="1">글번호</option>
+                                    <option value="2">구분</option>
+                                    <option value="3">제목</option>
+                                    <option value="4">글쓴이</option>
+                                    <option value="5">조회</option>
+                                    <option value="6">날짜</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input type="text" placeholder="검색할 내용" class="form-control">
+                            </div>
+                            <div class="col-2">
+                                <input type="button" value="검색" class="btn btn-primary form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-3"><!-- 게시판 내용1 -->
+                            <div class="col">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">글 번호</th>
+                                        <th scope="col">구분</th>
+                                        <th scope="col">제목</th>
+                                        <th scope="col">글쓴이</th>
+                                        <th scope="col">조회</th>
+                                        <th scope="col">날짜</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>잡담</td>
+                                        <td>야호</td>
+                                        <td>한조</td>
+                                        <td>778</td>
+                                        <td>2020-05-17</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>상담</td>
+                                        <td>ㅠㅠ~<a href="#" class="text-decoration-none">[7]</a></td>
+                                        <td>트레이서</td>
+                                        <td>88</td>
+                                        <td>2020-05-18</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>질문</td>
+                                        <td>오늘 날씨 어떤가요??!!<a href="#" class="text-decoration-none">[2]</a></td>
+                                        <td>메르시</td>
+                                        <td>78</td>
+                                        <td>2020-05-18</td>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <td>잡담</td>
+                                        <td>반갑습니다~!!!</td>
+                                        <td>한조</td>
+                                        <td>1351</td>
+                                        <td>2020-05-19</td>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <td>잡담</td>
+                                        <td>안녕하세요~!!! <span class="badge rounded-pill bg-danger">new</span></td>
+                                        <td>트레이서</td>
+                                        <td>13</td>
+                                        <td>2020-05-20</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt-4"><!-- 페이지선택 -->
+                            <div class="col-4"></div><!-- 공백 -->
+                            <div class="col">
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                                        <button type="button" class="btn btn-primary active"><</button>
+                                    </div>
+                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                      <button type="button" class="btn btn-outline-primary">1</button>
+                                      <button type="button" class="btn btn-outline-primary">2</button>
+                                      <button type="button" class="btn btn-outline-primary">3</button>
+                                      <button type="button" class="btn btn-outline-primary">4</button>
+                                      <button type="button" class="btn btn-outline-primary">5</button>
+                                    </div>
+                                    <div class="btn-group" role="group" aria-label="Third group">
+                                      <button type="button" class="btn btn-primary active">></button>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-2"></div><!-- 공백 -->
+                            <div class="col-2">
+                                <button class="btn btn-primary form-control">글쓰기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col"></div><!-- 빈공간 -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    </body>
+</html>
