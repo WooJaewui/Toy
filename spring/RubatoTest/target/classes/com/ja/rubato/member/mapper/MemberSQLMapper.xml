@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ja.rubato.member.mapper.MemberSQLMapper">
+	<insert id="insertMember">
+		insert into member values( 
+		    MEMBER_SEQ.nextval,
+		    #{id},
+		    #{pw},
+		    #{nick}
+		)
+	</insert>
+	<select id="selectByIdAndPw" resultType="com.ja.rubato.vo.MemberVo">
+		select * from member 
+		where id = #{id} 
+		and pw = #{pw}
+	</select>
+	<select id="selectById" resultType="com.ja.rubato.vo.MemberVo">
+		select * from member
+		where no = #{no}
+	</select>
+	
+	<select id="selectByNick" resultType="com.ja.rubato.vo.MemberVo">
+		select * from member where nick = #{nick}
+	</select>
+</mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

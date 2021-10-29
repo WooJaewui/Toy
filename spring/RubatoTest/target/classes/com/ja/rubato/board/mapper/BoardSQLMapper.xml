@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ja.rubato.board.mapper.BoardSQLMapper">
+	<insert id="insertBoard">
+		insert into board values(
+		    BOARD_SEQ.nextval,
+		    #{member_no},
+		    #{title},
+		    #{content},
+		    0,
+		    SYSDATE
+		)
+	</insert>
+	
+	<select id="selectAllList" resultType="com.ja.rubato.vo.BoardVo">
+		select * from 
+		(select A.*, rownum as ab from (select * from board order by no desc) A)
+		where ab BETWEEN #{start} and #{end}
+	</select>
+	
+	<select id="selectCountList" resultType="int">
+		select count(no) from board
+	</select>
+	
+	<select id="selectByNo" resultType="com.ja.rubato.vo.BoardVo">
+		select * from board where no = #{no}
+	</select>
+	
+	<select id="selectByContent" resultType="com.ja.rubato.vo.BoardVo">
+		select * from board where content like '%'|| #{content} || '%'
+	</select>
+	
+	<select id="selectByTitle" resultType="com.ja.rubato.vo.BoardVo">
+		select * from board where title like '%' || #{title} || '%'
+	</select>
+	
+	<select id="selectByMemberNo" resultType="com.ja.rubato.vo.BoardVo">
+		select * from board where member_no = #{member_no}
+	</select>
+	
+	<!-- 댓글 작성하기 -->
+	<insert id="insertBoardComment">
+		insert into Board_comment values(
+		    BOARD_COMMENT_SEQ.nextval,
+		    #{board_no},
+		    #{member_no},
+		    #{comment},
+		    sysdate
+		)
+	</insert>
+	
+	<delete id="deleteBoardComment">
+		delete from board_comment 
+		where "no" = #{no}
+		and member_no = #{member_no}
+	</delete>
+	
+	<select id="selectBoardCommentByBoardNo" resultType="com.ja.rubato.vo.BoardCommentVo">
+		select * from board_comment 
+		where board_no = #{board_no}
+	</select>
+	
+</mapper>
+  
+  
+  
+
+  
