@@ -1,0 +1,119 @@
+
+ 정리.
+
+
+
+ # Quartz
+
+쿼츠 구성요소.
+- Job 인터페이스.
+- JobDetail 인터페이스.
+- JobBuilder 클래스.
+- Trigger 인터페이스.
+- TriggerBuilder 클래스.
+- Listener 인터페이스.
+- Scheduler 인터페이스.
+- JobStore 인터페이스.
+
+
+Job 인터페이스.
+- 실제 일을 수행할 클래스에 implements한 뒤 execute( ) 메소드에 수행할 코드를 작성한다.
+
+
+
+JobDetail 인터페이스.
+- Job의 실제 구현 내용과 job 실행에 필요한 상세 정보가 담겨 있다.
+
+
+
+JobBuilder 클래스.
+- Job을 구성하는 설정 조건에 따라 두 개의 하위 빌더 클래스를 생성하여 직접 Job을 생성하지 않고 Job 생성을 위임한다.
+- Job과 Job 실행에 필요한 상세 정보를 설정하여 JobDetail을 반환한다.
+
+JobBuilder 구성 메서드.
+- newJob( Class <? extends Job> jobClass ) : job 생성.
+- withIdentity( String jobKey, String groupId ) : job 식별자 설정.
+- withDescription( String jobDescription ) : job 설명 작성.
+- ofType( Class <? extends Job> jobClazz ) : job 타입 설정.
+
+
+
+Trigger 인터페이스.
+- Job을 실행 스케쥴링에 관한 인터페이스.
+- 하나의 Job에는 하나의 Trigger를 지정할 수 있다.
+
+TriggerBuilder.
+- 잡 실행 스케쥴링에 관한 세부설정 + Trigger 생성 클래스.
+- newTrigger( ) : 트리거 생성.
+- withIdentity( String name, String groupId ) : 트리거 식별자 설정.
+- startAt( Date triggerStartTime ) : 스케쥴링 시작 시간.
+- startNow( ) : 스케쥴링 바로 시작.
+- endAt( ) : 스케쥴링 종료.
+- withSchedule( ScheduleBuilder<SBT> schedBuilder ) : CronScheduleBuilder / SimpleSchedulerBuilder 등을 파라미터로 받아서 스케쥴 시작을 설정.
+	- SimpleTrigger : 특정 시간에 Job을 수행할 때 사용하며 반복 횟수와 실행 간격 등을 지정할 수 있다.
+	- CronTrigger : cron 표현식으로 Trigger를 정의하는 방식이다.
+
+
+
+Listener 인터페이스.
+- Scheduler의 이벤트를 받을 수 있도록 Quartz에서 제공하는 인터페이스이다.
+- JobListener와 TriggerListener가 있다.
+	- JobListener : Job 실행 전후로 메서드를 실행할 수 있다.
+	- TriggerListener : Trigger가 실행, 오류 발생 또는 Trigger를 완료할 때 메서드를 실행할 수 있다.
+
+
+
+JobStore 인터페이스.
+- Job과 Trigger의 정보를 여러가지 방식으로 저장할 수 있다.
+- RAMJobStore, JDBC JobStore, RedisJobStore, MongoDBJobStore.
+	- RAMJobStore : 메모리에 스케쥴 정보를 저장한다, 성능은 뛰어나지만, 문제 발생 시 데이터를 유지하지 못한다.
+	- JDBC JobStore : 스케쥴 정보를 DB에 저장한다, 시스템 오류 발생 시에도 문제 없이 Job을 실행할 수 있다.
+
+
+
+Scheduler 인터페이스.
+- SchedulerFactory를 통해 만들어진다.
+- 쿼츠에 StdSchedulerFactory, 스프링 배치 SchedulerFactoryBean 등을 사용한다.
+
+
+
+스프링 배치.
+- SchedulerFactoryBean 클래스.
+- 추가적으로 공부하기.
+
+
+
+URL.
+쿼츠 크론 테스트 : http://www.cronmaker.com/;jsessionid=node054hx3gi2vjmd1rh4mybkii3w2258565.node0?0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
