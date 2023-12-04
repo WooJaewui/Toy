@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+<h2>Welcome</h2>
+<div th:if="${username}">
+    <p th:text="'Logged in as: ' + ${username}"></p>
+    <a th:href="'/logout?username=' + ${username}">Logout</a>
+</div>
+<div th:unless="${username}">
+    <p>You are not logged in.</p>
+    <a href="/login">Login</a>
+</div>
+</body>
+</html>
